@@ -7,11 +7,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
     <script src="app.js"></script>
 </head>
-<body ng-controller="StoreController as store">
-    <div ng-show="!store.product.soldOut">
-        <h1>{{store.product.name}}</h1>
-        <h2>{{store.product.price}}</h2>
-        <button>add to car</button>
+<body class="container" ng-controller="StoreController as store">
+    <div class="product row" ng-repeat="product in store.product">
+      <h3>
+        {{product.name}}
+        <em class="pull-right">{{product.price | currency}}</em>
+      </h3>
     </div>
-</body>
+  </body>
 </html>
